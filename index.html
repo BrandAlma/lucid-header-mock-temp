@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chat header mock</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { background: #09090b; }
+  .avatar-fallback {
+    background: linear-gradient(135deg, #7c3aed, #db2777);
+  }
+</style>
+</head>
+<body class="text-white antialiased" style="background:#3f3f46;">
+<!-- fixed 390px phone-width column: layout inside matches a 390px viewport -->
+<div class="mx-auto" style="width:390px;background:#09090b;min-height:844px;">
+<div class="px-4 pt-24">
+
+  <!-- replicated from app/app/chat/[matchId]/page.tsx header -->
+  <div class="mb-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img
+        src="https://i.pravatar.cc/96?img=12"
+        alt="Test Brandon's profile photo"
+        class="avatar-fallback h-12 w-12 shrink-0 rounded-full object-cover"
+        onerror="this.style.display='none';document.getElementById('avatar-fb').style.display='flex';"
+      >
+      <div id="avatar-fb" style="display:none" class="avatar-fallback h-12 w-12 shrink-0 items-center justify-center rounded-full text-lg font-bold text-white" aria-hidden="true">T</div>
+      <div>
+        <button class="mb-1 block text-sm text-zinc-400">← Matches</button>
+        <h1 class="text-xl font-bold">Test Brandon, 34</h1>
+        <span class="mt-1 inline-flex items-center gap-1.5 text-xs">
+          <span class="inline-block h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+          <span class="font-semibold text-emerald-300">Online now</span>
+        </span>
+        <button class="mt-1 flex items-center gap-1.5 text-xs text-emerald-300" aria-label="Encryption details">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-3.5 w-3.5" aria-hidden="true">
+            <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <span class="underline decoration-dotted underline-offset-2">End-to-end encrypted</span>
+        </button>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <a class="text-xs text-zinc-400 underline underline-offset-2">Safety tools and tips</a>
+      <button class="px-1 py-1 text-xs text-zinc-200">Report</button>
+      <button class="px-1 py-1 text-xs text-zinc-200">Block</button>
+      <button class="px-1 py-1 text-xs text-zinc-200">Unmatch</button>
+      <button class="px-1 py-1 text-xs text-red-400">Delete chat</button>
+    </div>
+  </div>
+
+  <!-- video / voice call buttons row under the photo -->
+  <div class="mb-4 flex items-center gap-2">
+    <button class="rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-zinc-100" aria-label="Video call Test Brandon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4" aria-hidden="true">
+        <path d="M23 7l-7 5 7 5V7z" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="1" y="5" width="15" height="14" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-zinc-100" aria-label="Voice call Test Brandon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- context bubbles -->
+  <div class="flex flex-col gap-2">
+    <div class="max-w-[75%] rounded-2xl rounded-bl-sm bg-zinc-800 px-3 py-2 text-sm">Hey, are you around tonight?</div>
+    <div class="max-w-[75%] self-end rounded-2xl rounded-br-sm bg-violet-600 px-3 py-2 text-sm">Yeah, what's up?</div>
+  </div>
+
+</div>
+</div>
+</body>
+</html>
